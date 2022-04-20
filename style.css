@@ -5,7 +5,7 @@ body {
 }
 .screen {
   width: 400px;
-  height: 100px;
+  height: 200px;
   margin: auto;
   overflow: auto;
   text-align: start;
@@ -19,6 +19,7 @@ body {
 }
 
 .message {
+  word-break: break-all;
   margin: 10px;
   color: black;
   background: lightblue;
