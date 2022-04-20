@@ -1,5 +1,6 @@
 const message = localStorage.getItem("data") ?? `{}`;
 const tempMess = Object.assign(JSON.parse(message));
+
 const elemChatA = document.getElementById("chatA");
 const input = document.querySelector("input");
 const elemScreen = document.getElementById("screen");
@@ -19,16 +20,19 @@ let getMessage = () => {
 getMessage();
 
 let updateValue = (e) => {
-  let eValue = e.target.value;
-  postMessage(eValue);
-  tempMess[Object.keys(tempMess).length] = eValue;
-  localStorage.setItem("data", JSON.stringify(tempMess));
-  elemScreen.scrollTop = elemScreen.scrollHeight;
-  var popup = window.open("http://127.0.0.1:8080/chatB.html", "window-2");
-  popup.postMessage(eValue, "http://127.0.0.1:8080/chatB.html");
+  postMessage(e.target.value);
   e.target.value = "";
+  elemScreen.scrollTop = elemScreen.scrollHeight;
 };
 input.addEventListener("change", updateValue);
+
+window.addEventListener("message", function (event) {
+  if (event.data != "") {
+    postMessage(event.data);
+  }
+
+  elemScreen.scrollTop = elemScreen.scrollHeight;
+});
 
 let Reset = () => {
   localStorage.clear();
