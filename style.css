@@ -1,0 +1,31 @@
+body {
+  /* display: flex; */
+  /* justify-content: center; */
+  text-align: center;
+}
+.screen {
+  width: 400px;
+  height: 100px;
+  margin: auto;
+  overflow: auto;
+  text-align: start;
+  border: 1px solid rgb(253, 181, 181);
+}
+.screen-input {
+  width: 400px;
+  height: 50px;
+  /* margin: 5px; */
+  border: 1px solid rgb(253, 181, 181);
+}
+
+.message {
+  margin: 10px;
+  color: black;
+  background: lightblue;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: start;
+}
+.chatA {
+  display: block;
+}
