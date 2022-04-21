@@ -4,7 +4,7 @@ const elemChatA = document.getElementById("chatA");
 const input = document.querySelector("input");
 const elemScreen = document.getElementById("screen");
 let isRefresh = false;
-
+window.name = "chatA";
 let renderMess = (value, isA) => {
   let elemDiv = document.createElement("p");
   elemDiv.setAttribute("class", "col  message");
@@ -51,6 +51,9 @@ window.addEventListener("message", function (event) {
 });
 
 let postMessage = (value) => {
-  var popup = window.open("https://chat-together.vercel.app/chatB.html", "index");
+  var popup = window.open(
+    "https://chat-together.vercel.app/chatB.html",
+    "chatA"
+  );
   popup.postMessage(value, "https://chat-together.vercel.app/chatB.html");
 };

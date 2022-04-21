@@ -3,7 +3,7 @@ let tempMess = Object.assign(JSON.parse(message));
 const elemChatA = document.getElementById("chatA");
 const input = document.querySelector("input");
 const elemScreen = document.getElementById("screen");
-
+window.name = "chatB";
 let renderMess = (value, isB) => {
   let elemDiv = document.createElement("p");
   elemDiv.setAttribute("class", "col  message");
@@ -52,7 +52,7 @@ window.addEventListener("message", function (event) {
 let postMessage = (value) => {
   var popup = window.open(
     "https://chat-together.vercel.app/index.html",
-    "chatA"
+    "chatB"
   );
   popup.postMessage(value, "https://chat-together.vercel.app/index.html");
 };
