@@ -50,6 +50,9 @@ window.addEventListener("message", function (event) {
 });
 
 let postMessage = (value) => {
-  var popup = window.open("http://127.0.0.1:8080/index.html", "chatA");
-  popup.postMessage(value, "http://127.0.0.1:8080/index.html");
+  var popup = window.open(
+    "https://chat-together.vercel.app/index.html",
+    "chatA"
+  );
+  popup.postMessage(value, "https://chat-together.vercel.app/index.html");
 };

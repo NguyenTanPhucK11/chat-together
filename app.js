@@ -3,6 +3,7 @@ let tempMess = Object.assign(JSON.parse(message));
 const elemChatA = document.getElementById("chatA");
 const input = document.querySelector("input");
 const elemScreen = document.getElementById("screen");
+let isRefresh = false;
 
 let renderMess = (value, isA) => {
   let elemDiv = document.createElement("p");
@@ -50,6 +51,6 @@ window.addEventListener("message", function (event) {
 });
 
 let postMessage = (value) => {
-  var popup = window.open("http://127.0.0.1:8080/chatB.html", "index");
-  popup.postMessage(value, "http://127.0.0.1:8080/chatB.html");
+  var popup = window.open("https://chat-together.vercel.app/chatB.html", "index");
+  popup.postMessage(value, "https://chat-together.vercel.app/chatB.html");
 };
