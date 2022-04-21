@@ -53,7 +53,7 @@ window.addEventListener("message", function (event) {
 let postMessage = (value) => {
   var popup = window.open(
     "https://chat-together.vercel.app/chatB.html",
-    "chatA"
+    "chatB"
   );
   popup.postMessage(value, "https://chat-together.vercel.app/chatB.html");
 };
